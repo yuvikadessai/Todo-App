@@ -22,13 +22,18 @@ router.get("/:id", (req, res) =>{
 });
 //Insert the User
 router.post("/", (req, res)=>{
-    const { id, name, email_id, password, confirmed_password} = req.body;
-    db.query("INSERT INTO Register (id, name, email_id, password, confirmed_password) VALUES( ?,?, ?, ?)", [ id, name, email_id,password, confirmed_password], (err, result) =>{
-        if(err)return res.status(404).json(err);
+    const { name, email_id, password, confirm_password } = req.body;
+
+    if(password !== confirm_password) {
+        return res.status(400).json({message:"Passwords do not match"});
+    }
+
+    const sql = "INSERT INTO Register (name, email_id, password, confirm_password) VALUES (?, ?, ?, ?)";
+    db.query(sql, [name, email_id, password, confirm_password], (err, result) =>{
+        if(err) return res.status(500).json(err);
         res.json({message:'Record Added Successfully'});
     });
 });
-
 //Delete by id 
 router.delete("/:id", (req, res)=>{
     const {id} = req.params;
@@ -42,7 +47,7 @@ router.delete("/:id", (req, res)=>{
 router.put("/:id", (req, res)=>{
     const {id} = req.params;
     const { name, email_id, password,confirmed_password} = req.body;
-    db.query("UPDATE Register SET name=?, email_id=?, password=? WHERE id=?", [ name, email_id,password,confirmed_password, id], (err, result) =>{
+    db.query("UPDATE Register SET name=?, email_id=?, password=?, confirm_password=? WHERE id=?", [ name, email_id,password,confirm_password, id], (err, result) =>{
         if(err)return res.status(404).json(err);
         res.json({message:'Record Updated Successfully'});
     });
