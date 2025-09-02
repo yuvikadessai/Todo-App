@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Todo App</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="homepage.html">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="login.html">Login/Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Register Form</h2>
+    <form id="registerForm">
+        <label>Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email_id" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirm_password" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script src="register.js"></script>
+</body>
+</html>
