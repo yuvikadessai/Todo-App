@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My To-Do App</title>
+  <link rel="stylesheet" href="todo2.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <h2>Menu</h2>
+    <a href="#" data-page="dashboard">Dashboard</a>
+    <a href="#" data-page="addTask">Add Task</a>
+    <a href="#" data-page="myTasks">My Tasks</a>
+    <a href="#" data-page="completed">Completed</a>
+    <a href="about.html">About</a>
+    <a href="#" id="logoutBtn">Logout</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <span class="menu-icon" id="menuBtn">&#9776;</span>
+    <h1>My To-Do List</h1>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Dashboard -->
+    <div id="dashboard" class="page active">
+      <h2>Dashboard</h2>
+      <div class="stats">
+        <div class="card">
+          <h3 id="totalTasks">0</h3>
+          <p>Total Tasks</p>
+        </div>
+        <div class="card">
+          <h3 id="pendingTasks">0</h3>
+          <p>Pending Tasks</p>
+        </div>
+        <div class="card">
+          <h3 id="completedTasks">0</h3>
+          <p>Completed Tasks</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Task -->
+    <div id="addTask" class="page">
+      <h2>Add a New Task</h2>
+      <form id="todoForm">
+        <input type="text" id="taskInput" placeholder="Enter your task..." required>
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <!-- My Tasks -->
+    <div id="myTasks" class="page">
+      <h2>My Tasks</h2>
+      <ul id="taskList"></ul>
+    </div>
+
+    <!-- Completed -->
+    <div id="completed" class="page">
+      <h2>Completed Tasks</h2>
+      <ul id="completedList"></ul>
+    </div>
+  </main>
+
+  <script src="todo2.js"></script>
+</body>
+</html>
