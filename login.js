@@ -42,5 +42,5 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 });
 
 function nextPage() {
-window.location.href = "todo.html";
+window.location.href = "todo2.html";
 }
