@@ -1,0 +1,136 @@
+/* Reset */
+html, body {
+    height: 100%;   /* ensures full height */
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;       /* force it to stick to bottom */
+    height: 100vh;   /* full viewport height */
+    width: 0;
+    background: #111;
+    overflow-y: auto;
+    transition: 0.4s;
+    padding-top: 60px;
+    z-index: 1000;   /* make sure it’s on top */
+  }
+  
+  
+  
+  .sidebar.open {
+    width: 250px;             /* shown when toggled */
+  }
+  
+  .sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background: #575757;
+    color: #fff;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  /* Main content */
+  main {
+    margin-left: 0;
+    transition: margin-left 0.4s;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main.shift {
+    margin-left: 250px;       /* content shifts only when sidebar is open */
+  }
+  
+  /* Page styling */
+  .page {
+    display: none;            /* hidden by default */
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .page.active {
+    display: block;           /* shows active page */
+  }
+  
+  /* Dashboard Stats */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #6200ea;
+  }
+  
+  /* Task list styling */
+  #taskList li, #completedList li {
+    list-style: none;
+    background: #eee;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #taskList li.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
