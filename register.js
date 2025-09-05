@@ -46,5 +46,5 @@ form.addEventListener('submit', function(e) {
 });
 
 function nextPage(){
-    window.location.href = "todo.html";
+    window.location.href = "todo2.html";
 }
